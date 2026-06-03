@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validação de Assinatura</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        width: 350px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    .resultado {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .sucesso {
+        color: green;
+    }
+
+    .erro {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Validação de Assinatura</h2>
+
+    <input type="text" id="codigo" placeholder="Digite o código de validação">
+
+    <button onclick="validarCodigo()">Validar</button>
+
+    <div id="resultado" class="resultado"></div>
+</div>
+
+<script>
+function validarCodigo() {
+    const codigo = document.getElementById('codigo').value.trim();
+    const resultado = document.getElementById('resultado');
+
+    // Exemplo de código válido
+    const codigoValido = "ASFGHFSGG1255";
+
+    if (codigo === codigoValido) {
+        resultado.innerHTML = "✓ Assinatura válida";
+        resultado.className = "resultado sucesso";
+    } else {
+        resultado.innerHTML = "✗ Código não encontrado";
+        resultado.className = "resultado erro";
+    }
+}
+</script>
+
+</body>
+</html>
